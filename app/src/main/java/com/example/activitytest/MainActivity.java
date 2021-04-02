@@ -44,14 +44,20 @@ public class MainActivity extends AppCompatActivity {
 //        l1.setLayoutParams(lp1);
 //        layout.addView(l1);
 
+        lp.topToTop=ConstraintLayout.LayoutParams.PARENT_ID;
+        lp.leftToLeft = ConstraintLayout.LayoutParams.PARENT_ID;
+        lp.bottomToBottom=ConstraintLayout.LayoutParams.PARENT_ID;
         btns[0]=new Button(this);
         btns[0].setLayoutParams(lp);
         btns[0].setText("Add");
         l0.addView(btns[0]);
 
-        lp2=new ConstraintLayout.LayoutParams(ConstraintLayout.LayoutParams.WRAP_CONTENT,
+        lp2=new ConstraintLayout.LayoutParams(400,
                 ConstraintLayout.LayoutParams.WRAP_CONTENT);
-        lp2.rightToRight=ConstraintLayout.LayoutParams.PARENT_ID;
+//        lp2.topToBottom=btns[0].getBottom();
+        lp2.topToTop=ConstraintLayout.LayoutParams.PARENT_ID;
+//        lp2.rightToRight=ConstraintLayout.LayoutParams.PARENT_ID;
+        lp2.leftToRight=btns[0].getRight();
         btns[1]=new Button(this);
         btns[1].setLayoutParams(lp2);
         btns[1].setText("Add");
@@ -61,8 +67,8 @@ public class MainActivity extends AppCompatActivity {
         lp 속성이 변하면 해당 lp 가진 모든 뷰의 속성이 변동.
         뷰마다 설정하는게 제일 베스트?
         결국엔 const 잡아주려면
-        M M / W W / M W / W M 4개만 깔고 나머지는 다 람다식으로로
-        */
+        M M / W W / M W / W M 4개만 깔고 나머지는 다 람다식으로
+         */
 
 //        et0=new EditText(this);
 //        et0.setLayoutParams(lp);
